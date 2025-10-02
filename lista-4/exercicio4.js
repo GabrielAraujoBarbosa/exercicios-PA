@@ -2,31 +2,17 @@ const input = require("readline-sync");
 
 let numero1 = Number( input.question("Digite o primeiro número: ") )
 let numero2 = Number( input.question("Digite o segundo número: ") )
-let numero3 = Number( input.question("Digite o segundo número: ") )
+let numero3 = Number( input.question("Digite o terceiro número: ") )
 
-if (numero1 > numero2 && numero1 > numero3) {
-    console.log(numero1)
+let maiorNumero 
+if (numero1 > numero2 && numero1 > numero3) { 
+    maiorNumero = numero1
 }
 else if (numero2 > numero3) {
-    console.log(numero2)
+    maiorNumero = numero2
 }
 else {
-    console.log(numero3)
+    maiorNumero = numero3
 }
 
-// QUAL A DIFERENÇA?
-
-if (numero1 > numero2) { 
-    if (numero1 > numero3) {
-       console.log(numero1)
-    } else {
-        console.log(numero3)
-    }
-}
-else {
-    if (numero2 > numero3) {
-    console.log(numero2)
-    } else {
-    console.log(numero3)
-    }
-}
+console.log(`O maior número é ${maiorNumero}`)
