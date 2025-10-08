@@ -29,7 +29,7 @@ switch (numero1) {
                 console.log(i)
             }
         } else {
-            // Sendo numero1 menor que numero2
+            // Sendo numero1 menor que numero2...
             for (let i = numero1 + 1; i < numero2; i++) {
                 // Em ordem crescente
                 console.log(i)
