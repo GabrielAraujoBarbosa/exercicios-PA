@@ -18,7 +18,7 @@ switch (numero1) {
         console.log(`Não existem números inteiros entre ${numero1} e ${numero2}!`)
         break;
 
-    // Caso nenhuma das opções acima foram executadas. Assim tendo um intervalo válido
+    // Caso nenhuma das opções acima foram executadas. Assim tendo um intervalo válido...
     default:
         // Mostre o intervalo...
 
