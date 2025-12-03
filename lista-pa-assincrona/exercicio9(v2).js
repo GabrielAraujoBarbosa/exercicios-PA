@@ -18,9 +18,12 @@ function analisarSeCaractereIgualVogal(caractere) {
 }
 function obterQuantidadeVogaisPalavra (palavra = "") {
     let quantidadeVogais = 0;
-    for (let i = 0; i < palavra.length; i++) {
+    
+    // Laço que percorre por cada caractere da palavra
+    for (let caractere of palavra) {
 
-        if ( analisarSeCaractereIgualVogal(palavra[i]) ) {
+        // Análise do caractere (através de função)
+        if ( analisarSeCaractereIgualVogal(caractere) ) {
             quantidadeVogais++
         } 
     }
