@@ -18,7 +18,7 @@ function calcularFatorial(numeroFatorial) {
     // Início da mensagem final 
     let mensagemResultado = `${numeroFatorial}! = `;
     
-    // Atribuindo o resultado padrão no Fatorial (para todo cálculo de fatorial, o resultado será no minímo 1)
+    // Atribuindo o resultado padrão no Fatorial (para todo cálculo de fatorial, o resultado será no mínimo 1)
     let resultadoFatorial = 1;
     
     // Criação de variável para saber se entrou no laço ou não; saber se numero para encontrar fatorial é maior que 1

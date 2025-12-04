@@ -2,9 +2,9 @@ const input = require("readline-sync");
 
 let numeroDigitado = input.questionInt("Digite um número: ")
 
-verificarSeNumeroPrimo(numeroDigitado)
+verificarNumeroPrimo(numeroDigitado)
 
-function verificarSeNumeroPrimo(numero) {
+function verificarNumeroPrimo(numero) {
 
     let mensagemFinal;
 
