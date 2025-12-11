@@ -5,7 +5,7 @@ function calcularMediaNotas (arrayNotas) {
     let media = arrayNotas
         .reduce(function(acumuladorNotas, notaAtual) {
             return acumuladorNotas + notaAtual;
-        }, 0); 
+        }); 
 
     return media /= arrayNotas.length
 }
