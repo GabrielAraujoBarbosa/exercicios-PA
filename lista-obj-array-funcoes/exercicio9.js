@@ -1,7 +1,14 @@
 const input = require("readline-sync"); // npm install readline-sync
 const clear = require('console-clear'); // npm install console-clear
+
+
 // função de delay
 const sleep = (tempoMilisegundos) => new Promise(resolve => setTimeout(resolve, tempoMilisegundos));
+// função para formatar números para Real (R$)
+const formatarParaMoedaBrasileira = new Intl.NumberFormat('pt-BR', {
+    style: 'currency', // Define o estilo como moeda
+    currency: 'BRL', // Define a moeda como Real Brasileiro
+});
 
 
 // CONTA BANCÁRIA FIXA
@@ -49,7 +56,7 @@ function fazerLogin() {
 // . 1 - CONSULTAR SALDO
 function exibirSaldo (contaBancaria) {
     console.log(`- Saldo atual:`)
-    console.log(` R$ ${contaBancaria.saldo.toFixed(2)}`)
+    console.log(` ${ formatarParaMoedaBrasileira.format(contaBancaria.saldo) }`)
     return true;
 }
 
@@ -63,7 +70,7 @@ function validarSaque (valorSaque, contaBancaria) {
 }
 function mostrarMensagemCedulasNotaAtual (quantidadeCedulas, valorCedula) {
     const palavraCedulaSingularPlural = quantidadeCedulas == 1 ? "cédula" : "cédulas";
-    console.log(`${ quantidadeCedulas } ${ palavraCedulaSingularPlural } de R$ ${ valorCedula.toFixed(2) }`)
+    console.log(`${ quantidadeCedulas } ${ palavraCedulaSingularPlural } de ${ formatarParaMoedaBrasileira.format(valorCedula) }`)
 }
 function calcularSaque (valorSaque) {
     let arrayQuantidadeCedulas = [100.00, 50.00, 20.00, 10.00, 5.00];
@@ -103,12 +110,12 @@ function realizarSaque (valorSaque, contaBancaria) {
         
         if (resultadoCalculo.valorImpossivelSacar != 0) {
             console.log("\n- EXCEÇÃO:")
-            console.log(`Não foi possível sacar R$ ${ resultadoCalculo.valorImpossivelSacar.toFixed(2) }`)
+            console.log(`Não foi possível sacar ${ formatarParaMoedaBrasileira.format(resultadoCalculo.valorImpossivelSacar) }`)
             console.log(`(Trabalhamos apenas com notas de 100 a 5)`)
         }
 
         console.log("\n- SAQUE:")
-        console.log(`Total Sacado: R$ ${resultadoCalculo.totalSacar.toFixed(2)}`)
+        console.log(`Total Sacado: ${ formatarParaMoedaBrasileira.format(resultadoCalculo.totalSacar) }`)
 
         contaBancaria.saldo -= resultadoCalculo.totalSacar
     }
@@ -135,7 +142,7 @@ function depositarDinheiro (valorDepositar, contaBancaria) {
     if (podeDepositar) {
         contaBancaria.saldo += valorDepositar
 
-        console.log(` O valor de R$ ${valorDepositar.toFixed(2)} foi depositado na sua conta!`)
+        console.log(` O valor de ${ formatarParaMoedaBrasileira.format(valorDepositar) } foi depositado na sua conta!`)
     }
     else {
         console.log(` Valor não possível de ser depositado!`)
