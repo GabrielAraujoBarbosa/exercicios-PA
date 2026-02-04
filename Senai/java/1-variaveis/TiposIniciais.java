@@ -25,6 +25,7 @@ public class TiposIniciais
 		boolean booleano_binario = true;
 		
 		// 2º - SAÍDAS
+		
 		System.out.println(menorInteiroPossivel);
 		System.out.println(pequenoInteiro);
 		System.out.println(tipoInteiroPadrao);
